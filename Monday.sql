@@ -1,26 +1,3 @@
-CREATE DATABASE project;
-CREATE TABLE Airport_details(id int, airport_name varchar(20), arrival_Time int,departure_Time int ,price_in_Rs int);
-
-CREATE TABLE Cricket_teams(id int, team_name varchar(20),number_of_players int, captain_name varchar(20), coach_name varchar(20));
-ALTER TABLE Airport_details ADD COLUMN locations varchar(20);
-ALTER TABLE Airport_details ADD COLUMN cities varchar(20);
-ALTER TABLE Airport_details ADD COLUMN type_of_airport varchar(20);
-select* from  Airport_details;
-ALTER TABLE Cricket_teams ADD COLUMN number_of_wining int;
-ALTER TABLE Cricket_teams ADD COLUMN runrate bigint;
-ALTER TABLE Cricket_teams ADD COLUMN top_bowlers varchar(20);
-select* from  Cricket_teams;
-ALTER TABLE Cricket_teams DROP COLUMN number_of_wining;
-ALTER TABLE Airport_details DROP COLUMN cities;
-ALTER TABLE Airport_details DROP COLUMN airport_detail;
-
-ALTER TABLE  Cricket_teams  DROP COLUMN runrate;
-ALTER TABLE  Cricket_teams  DROP COLUMN top_bowlers;
-
-ALTER TABLE Airport_details RENAME COLUMN locations TO located_places;
-ALTER TABLE Airport_details RENAME COLUMN type_of_airport TO airport_detail;
-ALTER TABLE Cricket_teams modify COLUMN runrate int;
-
 CREATE TABLE Cricket_teams(id int, team_name varchar(20),number_of_players int, captain_name varchar(20), coach_name varchar(20));
 INSERT INTO Cricket_teams(id,team_name,number_of_players,captain_name,coach_name) VALUES (1,'India',15,'Rohitsharma','RahulDravid');
 INSERT INTO Cricket_teams(id,team_name,number_of_players,captain_name,coach_name) VALUES (2,'Australia',15,'Pat Cummins','Andrew McDonald');
@@ -30,7 +7,6 @@ INSERT INTO Cricket_teams(id,team_name,number_of_players,captain_name,coach_name
 INSERT INTO Cricket_teams(id,team_name,number_of_players,captain_name,coach_name) VALUES (6,'Pakistan',15,'Babar Azam','Grant Bradburn');
 INSERT INTO Cricket_teams(id,team_name,number_of_players,captain_name,coach_name) VALUES (7,'Sri Lanka',15,'Dasun Shanaka','Chris Silverwood');
 INSERT INTO Cricket_teams(id,team_name,number_of_players,captain_name,coach_name) VALUES (8,'West Indies',15,'Shai Hope','Daren Sammy');
-select* from  Cricket_teams;
 INSERT INTO Cricket_teams(id,team_name,number_of_players,captain_name,coach_name) VALUES (9,'Bangladesh',15,'AlHasan','Hathurusingha');
 INSERT INTO Cricket_teams(id,team_name,number_of_players,captain_name,coach_name) VALUES (10,'Afghanistan',15,'Hashmatullah Shahidi','Jonathan Trott');
 INSERT INTO Cricket_teams(id,team_name,number_of_players,captain_name,coach_name) VALUES (11,'Ireland',15,'Andrew Balbirnie','Heinrich Malan');
@@ -43,6 +19,17 @@ INSERT INTO Cricket_teams(id,team_name,number_of_players,captain_name,coach_name
 INSERT INTO Cricket_teams(id,team_name,number_of_players,captain_name,coach_name) VALUES (18,'USA',15,'Patel','Arunkumar');
 INSERT INTO Cricket_teams(id,team_name,number_of_players,captain_name,coach_name) VALUES (19,'Namibia',15,'Gerhard Erasmus','Pierre de Bruyn');
 INSERT INTO Cricket_teams(id,team_name,number_of_players,captain_name,coach_name) VALUES (20,'Hong Kong',15,' Nizakat Khan','Trent Johnston');
+DELETE FROM Cricket_teams WHERE ID=20;
+DELETE FROM Cricket_teams WHERE ID=18;
+SELECT * FROM Cricket_teams;
+UPDATE Cricket_teams SET captain_name='Rohitsharma' where id=3;
+UPDATE Cricket_teams SET captain_name='Patel' where id=9;
+UPDATE Cricket_teams SET coach_name='Arunkumar' where captain_name='AlHasan';
+UPDATE Cricket_teams SET captain_name='Rohitsharma' where id=18;
+UPDATE Cricket_teams SET team_name='USA' where coach_name='Duleep Mendis';
+UPDATE Cricket_teams SET captain_name='Rohitsharma' where id=19;
+CREATE TABLE Airport_details(id int, airport_name varchar(20), arrival_Time int,departure_Time int ,price_in_Rs int);
+
 INSERT INTO Airport_details(id,airport_name,arrival_Time,departure_Time,price_in_Rs) VALUES (1,'IndraGandhiIA',8,6,4500);
 INSERT INTO Airport_details(id,airport_name,arrival_Time,departure_Time,price_in_Rs) VALUES (2,'IndraGandhiIA',12,10,5000);
 INSERT INTO Airport_details(id,airport_name,arrival_Time,departure_Time,price_in_Rs) VALUES (3,'IndraGandhiIA',4,2,4800);
@@ -64,6 +51,11 @@ INSERT INTO Airport_details(id,airport_name,arrival_Time,departure_Time,price_in
 INSERT INTO Airport_details(id,airport_name,arrival_Time,departure_Time,price_in_Rs) VALUES (18,'DeviAhilya_BaiHolkar',2,4,5800);
 INSERT INTO Airport_details(id,airport_name,arrival_Time,departure_Time,price_in_Rs) VALUES (19,'ChennaiIA',3,5,4700);
 INSERT INTO Airport_details(id,airport_name,arrival_Time,departure_Time,price_in_Rs) VALUES (20,'JaipurAirport',3,5,4700);
-SELECT * FROM Cricket_teams WHERE id=4;
-SELECT * FROM Cricket_teams WHERE team_name='New Zealand';
-UPDATE Cricket_teams SET captain_name='Rohitsharma' where id=3;
+UPDATE Airport_details SET airport_name='ChennaiIA' where id=3;
+UPDATE Airport_details SET airport_name='Puneairport' where arrival_Time=8;
+UPDATE Airport_details SET arrival_Time=10 where price_in_Rs=4700;
+UPDATE Airport_details SET departure_Time=11 where id=10;
+UPDATE Airport_details SET id=2 where price_in_Rs=6200;
+DELETE FROM Airport_details WHERE ID=20;
+DELETE FROM Airport_details WHERE ID=18;
+
