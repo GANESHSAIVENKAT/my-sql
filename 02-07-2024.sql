@@ -116,3 +116,243 @@ SELECT * FROM  product where prd_name LIKE 'D%' ;
 SELECT * FROM  product where prd_name LIKE 'G%' ;
 SELECT * FROM  product where prd_name LIKE 'C%' ;
 SELECT * FROM  product where prd_name LIKE '%a' ;
+
+
+
+
+
+
+SELECT * FROM product;
+
+AND,OR,IN,NOT IN,BETWEEN, NOT BETWEEN, LIKE,NOT LIKE,LIMIT
+
+ORDER BY:
+
+SELECT * FROM product order by id;
+SELECT * FROM product order by id desc;
+
+SELECT * FROM product order by id,prd_price;
+
+SELECT * FROM employee order by emp_sal desc;
+SELECT * FROM employee;
+
+limit:
+
+select * from employee order by id desc limit 5;
+
+LENGTH:
+SELECT emp_name,LENGTH(emp_name) from employee;
+
+LOWER:
+SELECT LOWER(emp_name) from employee;
+
+UPPER:
+SELECT UPPER(emp_name) from employee;
+
+INSTR: INSTRING: 
+
+'BENGALURU'
+             (STRINGVALUE, CHARACTER);
+SELECT INSTR('BENGALURU','G');
+SELECT INSTR('BENGALURU ',' ');
+
+SELECT * FROM employee;
+
+SELECT INSTR(emp_name,'a'),emp_name from employee;
+
+
+
+
+
+
+
+
+
+
+
+SELECT * FROM EMPLOYEE;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+UPDATE employee set emp_name = ' Malli' where id = 1;
+UPDATE employee set emp_name = 'Krishna   ' where id = 3;
+UPDATE employee set emp_name = ' kali  ' where id = 4;
+
+
+Select * from Employee ORDER BY emp_name; 
+Select * from Employee ORDER BY emp_name DESC;
+Select * from Employee ORDER BY id DESC; 
+ 
+ select * from Employee LIMIT 10;
+ select * from Employee ORDER BY id DESC limit 7;
+ select * from Employee limit 20;
+  select * from Employee limit 0;
+    select * from Employee limit 100;
+    
+      select id ,length(id)from Employee;
+	  select emp_name ,length(emp_name)from Employee;
+      select emp_id ,length(emp_id)from Employee;
+    
+   
+      
+      select lower(emp_mng_id)from Employee;
+	  select lower(id)from Employee;
+	  select lower(emp_id)from Employee;
+	   select lower(emp_name)from Employee;
+
+    
+    select upper(emp_department)from Employee;
+	select upper(emp_name)from Employee;
+    select upper(emp_mng_name)from Employee;
+     
+    select INSTR('deepika','e');
+    select instr('anusha','a'); 
+	select INSTR('gagana','g');
+    select INSTR('nagaveni','n');
+	select INSTR('savitha','s');
+
+AND,OR,IN, NOT IN,BETWEEN, NOT BETWEEN, LIKE, NOT LIKE,
+ ORDER BY, LOWER,UPPER, INSTR, LIMIT
+
+SELECT * FROM employee;
+
+SUBSTR: 
+
+'BENGAULURU'
+       SUBSTR(String, start position, no_of_characters);
+SELECT SUBSTR('BENGALURU',4,4);
+SELECT SUBSTR('XWORKZODC',5,15);
+
+SELECT * FROM employee;
+SELECT emp_department,substr(emp_department,4,8) from employee;
+
+'XWORKZ_ODC';
+
+SELECT substr('XWORKZ_ODC',INSTR('XWORKZ_ODC','O'));
+
+
+CONCAT:
+
+SELECT CONCAT('XWORKZ','ODC','BC');
+select * FROM employee;
+
+SELECT CONCAT(emp_name,emp_mng_name,emp_id) from employee;
+
+REVERSE:
+
+'XWORKZ'
+
+SELECT REVERSE('xworkz');
+select reverse(emp_id) from employee;
+
+Repeat:
+
+SELECT REPEAT('ABC',5);
+
+replace:
+
+HPLAPTOP
+
+
+SELECT REPLACE('HPLAPTOP','HP','DELL');
+
+ALTER:
+
+SELECT * FROM stations;
+
+ALTER TABLE stations ADD COLUMN price int 
+after names_of_trains;
+
+ALTER TABLE stations ADD COLUMN train_from varchar(20) after price,
+ADD COLUMN train_to varchar(10) after id;
+
+SELECT * FROM stations;
+
+ALTER TABLE stations rename COLUMN 
+price to ticket_price;
+
+ALTER TABLE stations modify ticket_price bigint;
+
+DESC stations;
+
+ALTER TABLE stations CHANGE 
+number_of_passengers total_passengers int;
+
+
+
+
+
+
+TASK:
+CREATE TABLE: country_info with 5 columns
+By using ALTER command ADD 20 COLUMNS.
+By using ALTER Command Rename All 25 columns
+By using ALTER Command Modify datatype for 20 columns.
+By using Change command modify 20 columns.
+
+CREATE TABLE Country_info(id int, country_name varchar(30), No_of_population int ,Total_No_of_Men bigint,Total_No_of_Women bigint);
+select*from Country_info;
+ALTER TABLE Country_info RENAME COLUMN No_of_Population TO Total_population;
+ALTER TABLE Country_info RENAME COLUMN country_name TO country;
+ALTER TABLE Country_info Add COLUMN Hotels int;
+ALTER TABLE Country_info Drop COLUMN Hotels ;
+ALTER TABLE Country_info Add COLUMN Hotels int after id;
+ALTER TABLE Country_info RENAME COLUMN Total_No_of_Men TO Menpopulation;
+ALTER TABLE Country_info RENAME COLUMN Total_No_of_Women TO Women_population;
+ALTER TABLE Country_info RENAME COLUMN Menpopulation TO Men_population;
+ALTER TABLE Country_info modify COLUMN Hotels bigint;
+desc Country_info;
+ALTER TABLE Country_info CHANGE Hotels  Total_no_of_Hotels bigint;
+ALTER TABLE Country_info Add COLUMN Food_detail varchar(20);
+ALTER TABLE Country_info Add COLUMN Food_rating int;
+ALTER TABLE Country_info Add COLUMN child_population int;
+ALTER TABLE Country_info CHANGE child_population children_population bigint;
+ALTER TABLE Country_info Add COLUMN National_Animal  int;
+ALTER TABLE Country_info Add COLUMN National_Game int;
+ALTER TABLE Country_info modify National_Animal varchar(20);
+ALTER TABLE Country_info CHANGE  National_Game National_Games varchar(20);
+ALTER TABLE Country_info Add COLUMN Adhar_Details bigint  ;
+ALTER TABLE Country_info ADD COLUMN Cast varchar(20) AFTER Men_population ;
+ALTER TABLE Country_info ADD COLUMN cast_of_women varchar(20) AFTER Women_population ;
+ALTER TABLE Country_info rename COLUMN Cast to cast_of_men ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
